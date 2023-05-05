@@ -12,11 +12,15 @@
         <div class="sidebar-menu">
             <ul id="accordion-menu">
                 <li>
-                    <a href="calendar.html" class="dropdown-toggle no-arrow">
-                        <span class="micon dw dw-house-1"></span><span class="mtext">Home</span>
+                    <a href="{{ route('admin.home') }}" class="dropdown-toggle no-arrow">
+                        <span class="mtext">Home</span>
                     </a>
                 </li>
-
+                <li>
+                    <a href="{{ route('admin.corners') }}" class="dropdown-toggle no-arrow">
+                        <span class="mtext">Corner</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
