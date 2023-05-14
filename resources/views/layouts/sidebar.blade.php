@@ -21,6 +21,11 @@
                         <span class="mtext">Corner</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('admin.offers') }}" class="dropdown-toggle no-arrow">
+                        <span class="mtext">Offers</span>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
