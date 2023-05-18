@@ -10,7 +10,7 @@ class Varietie extends Model
     use HasFactory;
     protected $table = 'varieties';
     protected $fillable = [
-        'name' , 'type' , 'price' , 'size' , 'extras' , 'corner_id'
+        'name' , 'image' ,'type' , 'price' , 'size' , 'extras' , 'corner_id'
     ];
     public function corner()
     {

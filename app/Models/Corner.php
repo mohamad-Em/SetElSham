@@ -10,7 +10,7 @@ class Corner extends Model
     use HasFactory;
     protected $table = 'corners';
     protected $fillable = [
-        'name'
+        'name' , 'image'
     ];
     public function varieties()
     {

@@ -25,6 +25,15 @@ Edit Offer
                     <h5 class="alert alert-danger">{{ $message }}</h5>
                     @enderror
                     <div class="form-group row">
+                        <label class="col-sm-12 col-md-2 col-form-label">Description</label>
+                        <div class="col-sm-12 col-md-10">
+                            <textarea class="form-control" name="description">{{ $record->description }}</textarea>
+                        </div>
+                    </div>
+                    @error('price')
+                    <h5 class="alert alert-danger">{{ $message }}</h5>
+                    @enderror
+                    <div class="form-group row">
                         <label class="col-sm-12 col-md-2 col-form-label">Price</label>
                         <div class="col-sm-12 col-md-10">
                             <input class="form-control" type="text" name="price" value="{{ $record->price }}" placeholder="Price" autocomplete="off">
@@ -33,7 +42,6 @@ Edit Offer
                     @error('price')
                     <h5 class="alert alert-danger">{{ $message }}</h5>
                     @enderror
-
             </div>
             <input type="submit" class="btn btn-primary" value="Save">
             </form>

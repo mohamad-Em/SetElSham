@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('varieties', function (Blueprint $table) {
             $table->bigInteger('id')->autoIncrement();
             $table->string('name');
+            $table->string('image');
             $table->string('type')->nullable();
             $table->string('price');
             $table->string('size')->nullable();

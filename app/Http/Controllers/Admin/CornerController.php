@@ -5,11 +5,13 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Corner\StoreRequest;
 use App\Http\Requests\Admin\Corner\UpdateRequest;
+use App\Http\Traits\imageTrait;
 use App\Models\Corner;
 use Illuminate\Http\Request;
 
 class CornerController extends Controller
 {
+    use imageTrait;
     public function corners()
     {
         $corners = Corner::all();
@@ -22,6 +24,7 @@ class CornerController extends Controller
     public function store(StoreRequest $request)
     {
         $data = $request->all();
+        $data['image'] = $this->saveImage($request->image, 'vendors/images/corners');
         $record = Corner::create($data);
         return redirect()->route('admin.corners')->with(['success' => 'Create Successfully']);
     }

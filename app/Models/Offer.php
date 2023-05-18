@@ -10,6 +10,6 @@ class Offer extends Model
     use HasFactory;
     protected $table = 'offers';
     protected $fillable = [
-        'name' , 'price' ,'image'
+        'name' , 'description' ,'price' ,'image'
     ];
 }

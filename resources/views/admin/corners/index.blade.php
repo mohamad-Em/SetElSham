@@ -29,6 +29,7 @@ Corners
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
+                            <th scope="col">Image</th>
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
@@ -40,6 +41,8 @@ Corners
                         <tr>
                             <td>{{ $num++ }}</td>
                             <td>{{ $row->name }}</td>
+                            <td><img src="{{ asset('vendors/images/corners/'.$row->image) }}" width="200"></td>
+
                             <td>
                                 <a href="{{ route('admin.corners.varieties',$row->id) }}" class="btn btn-primary">Varieties</a>
                                 <a href="{{ route('admin.corners.edit',$row->id) }}" class="btn btn-info">Edit</a>

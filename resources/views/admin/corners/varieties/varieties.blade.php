@@ -29,6 +29,7 @@ Varieties
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
+                            <th scope="col">Image</th>
                             <th scope="col">Type</th>
                             <th scope="col">Price</th>
                             <th scope="col">Size</th>
@@ -44,6 +45,8 @@ Varieties
                         <tr>
                             <td>{{ $num++ }}</td>
                             <td>{{ $row->name }}</td>
+                            <td><img src="{{ asset('vendors/images/varietie/'.$row->image) }}" width="200"></td>
+
                             @if($row->type == null)
                             <td>-</td>
                             @else

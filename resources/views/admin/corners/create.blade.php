@@ -13,7 +13,7 @@ Create Corner
                     </div>
 
                 </div>
-                <form action="{{ route('admin.corners.store') }}" method="POST">
+                <form action="{{ route('admin.corners.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group row">
                         <label class="col-sm-12 col-md-2 col-form-label">Name</label>
@@ -21,6 +21,15 @@ Create Corner
                             <input class="form-control" type="text" name="name" placeholder="Name" autocomplete="off">
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label class="col-sm-12 col-md-2 col-form-label">Image</label>
+                        <div class="col-sm-12 col-md-10">
+                            <input class="form-control" type="file" name="image" placeholder="Name" autocomplete="off">
+                        </div>
+                    </div>
+                    @error('image')
+                    <h5 class="alert alert-danger">{{ $message }}</h5>
+                    @enderror
             </div>
             <input type="submit" class="btn btn-primary" value="Save">
             </form>

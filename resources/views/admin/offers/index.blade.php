@@ -29,6 +29,7 @@ Offers
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
+                            <th scope="col">Description</th>
                             <th scope="col">Price</th>
                             <th scope="col">Image</th>
                             <th scope="col">Action</th>
@@ -42,6 +43,7 @@ Offers
                         <tr>
                             <td>{{ $num++ }}</td>
                             <td>{{ $row->name }}</td>
+                            <td>{{ $row->description }}</td>
                             <td>{{ $row->price }}</td>
                             <td><img src="{{ asset('vendors/images/offers/'.$row->image) }}" width="200"></td>
                             <td>

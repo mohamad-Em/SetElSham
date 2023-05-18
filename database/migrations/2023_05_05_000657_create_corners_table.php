@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('corners', function (Blueprint $table) {
             $table->bigInteger('id')->autoIncrement();
             $table->string('name');
+            $table->string('image');
             $table->timestamps();
         });
     }

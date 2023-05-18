@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('offers', function (Blueprint $table) {
             $table->bigInteger('id')->autoIncrement();
             $table->string('name');
+            $table->string('description');
             $table->string('price');
             $table->string('image');
             $table->timestamps();
