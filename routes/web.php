@@ -5,6 +5,8 @@ use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\OfferController;
 use App\Http\Controllers\Admin\VarietieController;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\website\HomeController;
+use App\Models\Corner;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +21,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('admin.index');
+    $corners = Corner::all();
+    return view('admin.website.home',compact('corners'));
 });
 Route::group(['namespace' => 'Admin'],function(){
     Route::get('login',[LoginController::class,'login'])->name('admin.login');
@@ -59,3 +62,12 @@ Route::group(['namespace' => 'Admin' , 'prefix' => 'offers' , 'middleware' => 'c
     Route::get('delete/{id}',[OfferController::class,'delete'])->name('admin.offers.delete');
 });
 //End Offer Routes
+
+
+//Start Website Routes
+Route::group(['namespace' => 'website'],function(){
+    Route::get('index',[HomeController::class,'index'])->name('website.index');
+    Route::get('show/{id}',[HomeController::class,'show'])->name('website.show');
+});
+
+//End Website Routes
